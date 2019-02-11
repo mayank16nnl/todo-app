@@ -2,9 +2,12 @@
 
 return [
     'database' => [
-        'host' => 'localhost',
-        'dbname' => 'todo-app',
-        'username' => 'superroot',
-        'password' => 'superroot'
+        'connection' => 'mysql:host=localhost',
+        'name' => 'todo-app',
+        'username' => 'root',
+        'password' => '',
+        'options' => [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]
     ]
 ];
