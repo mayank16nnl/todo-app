@@ -10,17 +10,17 @@ class PagesController
     {
         $tasks = App::get('database')->selectAll('tasks');
 
-        require 'app/views/index.php';
+        return view('index', ['tasks' => $tasks]);
     }
 
     public function about()
     {
-        require 'app/views/about.php';        
+        return view('about');        
     }
 
     public function contact()
     {
-        require 'app/views/contact.php';        
+        return view('contact');        
     }
 }
 
