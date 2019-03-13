@@ -2,8 +2,7 @@
 
 return [
     'database' => [
-        'connection' => 'mysql:host=localhost',
-        'name' => 'todo-app',
+        'dsn' => 'mysql:host=localhost;dbname=todo-app',
         'username' => 'root',
         'password' => '',
         'options' => [

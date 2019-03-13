@@ -3,7 +3,7 @@
 function view($name, $data = []) {
     extract($data);
 
-    return require "app/views/{$name}.view.php";
+    return require dirname(__DIR__)."/app/views/{$name}.view.php";
 }
 
 function redirect($path) {

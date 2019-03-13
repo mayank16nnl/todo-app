@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Core\App;
+use Core\App;
 
 class PagesController
 {    
