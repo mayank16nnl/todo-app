@@ -2,6 +2,13 @@
 
 Simple PHP application to manage tasks
 
+## Installation
+
+```
+composer install
+php -S 127.0.0.1:8000 -t public/
+```
+
 ## Purpose
 
 I am developping this app to improve my PHP skills. Feedbacks are welcome !
