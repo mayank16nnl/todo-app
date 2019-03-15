@@ -1,6 +1,8 @@
 <?php
 
-$router::get('', 'PagesController::home');
-$router::get('about', 'PagesController::about');
-$router::get('contact', 'PagesController::contact');
-$router::post('contact', 'PagesController::contact');
+$router::get('', 'PageController::home');
+$router::get('about', 'PageController::about');
+$router::get('contact', 'PageController::contact');
+$router::post('contact', 'PageController::contact');
+$router::get('new', 'TaskController::new');
+$router::post('store', 'TaskController::store');

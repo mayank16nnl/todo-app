@@ -43,7 +43,7 @@ class Router
 
     protected function callMethod($controller, $method)
     {
-        $controller = "App\\Controllers\\{$controller}";
+        $controller = "App\\Controller\\{$controller}";
         $controller = new $controller;
 
         if (! method_exists($controller, $method)) {

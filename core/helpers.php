@@ -1,11 +1,9 @@
 <?php
 
-function view($name, $data = []) {
-    extract($data);
-
-    return require dirname(__DIR__)."/app/views/{$name}.view.php";
+function display($template) {
+    echo $template;
 }
 
-function redirect($path) {
+function redirect($path = null) {
     header("Location: /{$path}");
 }

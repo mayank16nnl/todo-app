@@ -1,9 +1,12 @@
 {
     "autoload": {
         "psr-4": {
-            "App\\": "./app",
+            "App\\": "./src",
             "Core\\": "./core"
         },
         "files": ["core/helpers.php"]
+    },
+    "require": {
+        "twig/twig": "^2.7"
     }
 }
