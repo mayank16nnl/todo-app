@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use Core\App;
+use Core\Container;
 use Core\Controller;
 
 class TaskController extends Controller
@@ -13,7 +13,7 @@ class TaskController extends Controller
 
     public function store()
     {
-        App::get('database')->create('task', [
+        $this->getContainer()->get('database')->create('task', [
             'title' => $_POST['title'],
         ]);
 

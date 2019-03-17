@@ -1,10 +1,22 @@
 <?php
 
-use Core\App;
+use Core\Container;
 use Core\Database\{QueryBuilder, Connection};
+use Core\Service\Twig;
+use Twig\Extension\DebugExtension;
 
-App::bind('config', require dirname(__DIR__).'/config/config.php');
+$container = Container::init();
 
-App::bind('database',  new QueryBuilder(
-    Connection::make(App::get('config')['database'])
+// Config
+$container->bind('config', require dirname(__DIR__).'/config/config.php');
+
+// Database
+$container->bind('database', new QueryBuilder(
+    Connection::make($container->get('config')['database'])
 ));
+
+// Services
+$container->bind('twig', 
+    Twig::init()->addExtension(new DebugExtension)
+                ->getService()
+);

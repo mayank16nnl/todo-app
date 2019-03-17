@@ -1,5 +1,6 @@
 <?php
 
+use Core\Config;
 use Core\{Router, Request};
 
 require dirname(__DIR__).'/vendor/autoload.php';

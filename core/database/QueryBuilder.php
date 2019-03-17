@@ -20,7 +20,7 @@ class QueryBuilder
      */
     public function findAll($table, $orderBy = 'DESC')
     {
-    $statement = $this->pdo->prepare("SELECT * FROM {$table} ORDER BY id {$orderBy}");
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} ORDER BY id {$orderBy}");
 
         $statement->execute();
 

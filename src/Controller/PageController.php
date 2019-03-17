@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use Core\App;
+use Core\Container;
 use Core\Controller;
 
 class PageController extends Controller
 {    
     public function home()
     {
-        $tasks = App::get('database')->findAll('task');
+        $tasks = $this->getContainer()->get('database')->findAll('task');
 
         return $this->render('pages/home.html.twig', [
             'tasks' => $tasks,
