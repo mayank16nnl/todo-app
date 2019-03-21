@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="text-right">
-    <a href="/new" class="btn btn-info">+ New task</a>
+    <a href="/task/new" class="btn btn-info">+ New task</a>
 </div>
 
 <div class="jumbotron mt-3">
@@ -31,11 +31,13 @@
                         <td>{{ loop.index }}</td>
                         <td>{{ task.title }}</td>
                         <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-secondary">Read</button>
-                                <button type="button" class="btn btn-secondary">Update</button>
-                                <button type="button" class="btn btn-secondary">Delete</button>
-                            </div>
+                            <form action="/task/{{ task.id }}/delete" method="post">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="/task/{{ task.id }}" class="btn btn-secondary">Read</a>
+                                    <a href="/task/{{ task.id }}/edit" class="btn btn-secondary">Edit</a>
+                                    <button type="submit" class="btn btn-secondary">Delete</button>
+                                </div>
+                            </form>
                         </td>
                     </tr>                        
                 {% endfor %}
