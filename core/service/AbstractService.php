@@ -16,6 +16,11 @@ abstract class AbstractService implements ServiceInterface
         $this->setService();
     }
 
+    /**
+     * Instantiate service 
+     *
+     * @return mxied
+     */
     public static function init()
     {
         if (is_null(static::$instance)) {

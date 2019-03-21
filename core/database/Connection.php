@@ -4,6 +4,12 @@ namespace Core\Database;
 
 class Connection
 {
+    /**
+     * Connect to database
+     *
+     * @param array $config
+     * @return \PDO
+     */
     public static function make($config)
     {
         try {

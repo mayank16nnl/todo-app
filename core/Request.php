@@ -4,6 +4,11 @@ namespace Core;
 
 class Request
 {
+    /**
+     * Get URI
+     *
+     * @return string
+     */
     public static function uri()
     {
         return trim(
@@ -11,6 +16,11 @@ class Request
         );
     }
 
+    /**
+     * Get HTTP method
+     *
+     * @return string
+     */
     public static function method()
     {
         return $_SERVER['REQUEST_METHOD'];
