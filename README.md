@@ -4,6 +4,8 @@ Simple PHP application to manage tasks
 
 ## Installation
 
+Create database from the `todo-app.sql` file, then execute these commands:
+
 ```
 composer install
 php -S 127.0.0.1:8000 -t public/
