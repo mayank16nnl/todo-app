@@ -15,6 +15,12 @@ class Route
         $this->controller = $controller;
     }
 
+    /**
+     * Check if route pattern matches with uri pattern
+     *
+     * @param string $uri
+     * @return boolean
+     */
     public function match($uri)
     {
         $parameters = preg_replace_callback('#:([\w]+)#', [$this, 'paramMatch'], $this->uri);
@@ -29,7 +35,13 @@ class Route
         return true;
     }
     
-
+    /**
+     * Constraint route parameter pattern
+     *
+     * @param string $parameter
+     * @param string $pattern
+     * @return Route
+     */
     public function with($parameter, $pattern)
     {
         $this->parameters[$parameter] = str_replace('(','(?:', $pattern);
@@ -37,6 +49,11 @@ class Route
         return $this;
     }
 
+    /**
+     * Call the right controller and method
+     *
+     * @return object
+     */
     public function call()
     {
         return $this->callMethod(
