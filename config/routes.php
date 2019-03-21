@@ -10,5 +10,10 @@ $router->post('/contact', 'PageController::contact');
 $router->get('/task/new', 'TaskController::new');
 $router->get('/task/:id', 'TaskController::show')
        ->with('id', '[0-9]+');
-$router->post('/store', 'TaskController::store');
-$router->post('/delete/:id', 'TaskController::delete');
+$router->get('/task/:id/edit', 'TaskController::edit')
+       ->with('id', '[0-9]+');
+$router->post('/task/store', 'TaskController::store');
+$router->post('/task/:id/update', 'TaskController::update')
+       ->with('id', '[0-9]+');
+$router->post('/task/:id/delete', 'TaskController::delete')
+       ->with('id', '[0-9]+');
