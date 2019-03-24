@@ -1,0 +1,84 @@
+{% extends "base.html.twig" %}
+
+{% block title "Se connecter" %}
+
+{% block body %}
+    <div class="alert alert-info">
+        Please fill in your credentials to log in, or sign up to register with us
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/user/login" method="post">
+                <fieldset>
+                    <legend>Log In</legend>
+                
+                    {# Email #}
+                    <div class="form-group row">
+                        <label for="login-email" class="col-lg-2 col-form-label">Email:</label>
+                        <div class="col-lg-10">
+                            <input type="email" id="login-email" name="login-email" class="col-lg-10 form-control">
+                        </div>
+                    </div>
+
+                    {# Password #}
+                    <div class="form-group row">
+                        <label for="login-password" class="col-lg-2 col-form-label">Password:</label>
+                        <div class="col-lg-10">
+                            <input type="password" id="login-password" name="login-password" class="col-lg-10 form-control">
+                        </div>
+                    </div>
+
+                    {# Submit #}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Send</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <form action="user/store" method="post">
+                <fieldset>
+                    <legend>Sign Up</legend>
+
+                    {# Name #}
+                    <div class="form-group row">
+                        <label for="signup-name" class="col-lg-2 col-form-label">Name:</label>
+                        <div class="col-lg-10">
+                            <input type="text" id="signup-name" name="signup-name" class="col-lg-10 form-control">
+                        </div>
+                    </div>
+                    
+                    {# Username #}
+                    <div class="form-group row">
+                        <label for="signup-username" class="col-lg-2 col-form-label">Username:</label>
+                        <div class="col-lg-10">
+                            <input type="text" id="signup-username" name="signup-username" class="col-lg-10 form-control">
+                        </div>
+                    </div>
+
+                    {# Email #}
+                    <div class="form-group row">
+                        <label for="signup-email" class="col-lg-2 col-form-label">Email:</label>
+                        <div class="col-lg-10">
+                            <input type="email" id="signup-email" name="signup-email" class="col-lg-10 form-control">
+                        </div>
+                    </div>
+
+                    {# Password #}
+                    <div class="form-group row">
+                        <label for="signup-password" class="col-lg-2 col-form-label">Password:</label>
+                        <div class="col-lg-10">
+                            <input type="password" id="signup-password" name="signup-password" class="col-lg-10 form-control">
+                        </div>
+                    </div>
+
+                    {# Submit #}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Send</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

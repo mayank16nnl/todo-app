@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title "Edit profile" %}
+
+{% block body %}
+<h1>Edit profile</h1>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">        
+        <form action="/user/update" method="post">
+            {# Name #}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" value="{{ user.name }}">
+            </div>
+            
+            {# Username #}
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" value="{{ user.username }}">
+            </div>
+            
+            {# Email #}
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" value="{{ user.email }}">
+            </div>
+
+            {# Submit #}
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
