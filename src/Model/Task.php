@@ -6,13 +6,36 @@ use Core\Model;
 
 class Task extends Model
 {
+    private $title;
+
+    /**
+     * Return task's title
+     *
+     * @param string $title
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set task's title
+     *
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
     /**
      * Return a task
      *
      * @param integer $id
      * @return array
      */
-    public function get($id)
+    public function get($id): array
     {
         return $this->pdo->find($this->table, $id);
     }
@@ -22,7 +45,7 @@ class Task extends Model
      *
      * @return array
      */
-    public function getAll()
+    public function getAll(): array
     {
         return $this->pdo->findAll($this->table);
     }
@@ -33,7 +56,7 @@ class Task extends Model
      * @param array $parameters
      * @return boolean
      */
-    public function store($parameters)
+    public function store($parameters): bool
     {
         return $this->pdo->store($this->table, $parameters);
     }
@@ -45,7 +68,7 @@ class Task extends Model
      * @param array $parameters
      * @return boolean
      */
-    public function update($id, $parameters)
+    public function update($id, $parameters): bool
     {
         return $this->pdo->update($this->table, $id, $parameters);
     }
@@ -56,7 +79,7 @@ class Task extends Model
      * @param integer $id
      * @return boolean
      */
-    public function delete($id)
+    public function delete($id): bool
     {
         return $this->pdo->delete($this->table, $id);
     }
