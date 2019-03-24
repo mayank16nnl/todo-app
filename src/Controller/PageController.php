@@ -15,7 +15,7 @@ class PageController extends Controller
     {
         $tasks = $this->model('task')->getAll();
 
-        return $this->render('pages/home.html.twig', [
+        return $this->render('page/home.html.twig', [
             'tasks' => $tasks,
         ]);
     }
@@ -27,7 +27,7 @@ class PageController extends Controller
      */
     public function about()
     {
-        return $this->render('pages/about.html.twig');        
+        return $this->render('page/about.html.twig');        
     }
 
     /**
@@ -37,7 +37,7 @@ class PageController extends Controller
      */
     public function contact()
     {
-        return $this->render('pages/contact.html.twig');        
+        return $this->render('page/contact.html.twig');        
     }
 }
 

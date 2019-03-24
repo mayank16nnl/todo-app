@@ -10,9 +10,9 @@ class TaskController extends Controller
      *
      * @return Twig\Environment
      */
-    public function new()
+    public function create()
     {
-        return $this->render('task/new.html.twig');
+        return $this->render('task/create.html.twig');
     }
 
     /**
@@ -46,7 +46,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Store a task in database
+     * Store a task
      */
     public function store()
     {
@@ -60,7 +60,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Update a task in database
+     * Update a task
      *
      * @param integer $id
      */
@@ -76,7 +76,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Delete a task in database
+     * Delete a task
      *
      * @param integer $id
      */
